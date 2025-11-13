@@ -31,7 +31,7 @@ hold on;
 for i=1:3
     fcounts = zeros(size(eps_list));
     for j=1:length(eps_list)
-        [af,bf,it,fcount,~] = dichotomy(f{i}, a0, b0, l_fixed, eps_list(j));
+        [af,bf,it,fcount,~] = dichotomy_no_deriv(f{i}, a0, b0, l_fixed, eps_list(j));
         fcounts(j) = fcount;
     end
     plot(log10(eps_list), fcounts, '-o', 'DisplayName', sprintf('f_%d',i));
